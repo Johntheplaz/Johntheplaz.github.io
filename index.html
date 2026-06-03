@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fullscreen Image Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            overflow: hidden;
+        }
+        .click-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            user-select: none;
+            font-family: Arial, sans-serif;
+            z-index: 1;
+        }
+        .click-box:hover {
+            background-color: #0056b3;
+        }
+        #fullscreenImage {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="clickBox" class="click-box" onclick="makeFullscreen()">Click Me</div>
+
+<img id="fullscreenImage" src="bmd.png">
+
+<script>
+function makeFullscreen() {
+    document.getElementById("clickBox").style.display = "none";
+    document.getElementById("fullscreenImage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
